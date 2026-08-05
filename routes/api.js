@@ -8,3 +8,8 @@ const authMiddleware = require('../controller/authMiddelware');
 router.post("/register", penulisController.register);
 router.post("/login", penulisController.login);
 
+router.get("/genre", authMiddleware, genreControler.getAll);
+router.post("/genre", authMiddleware, genreController.create);
+router.put("/genre/:id", authMiddleware, genreController.update);
+router.delete("/genre/:id", authMiddleware, genreController.remove);
+
