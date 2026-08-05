@@ -4,6 +4,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
+        },
+        judul: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        sinopsis: {
+            type: DataTypes.TEXT,
+            allowNull: false,
         }
     }, {
         tableName: 'komik',
