@@ -26,5 +26,14 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true,
     });
 
+        Komik.associate = (models) => {
+        Komik.belongsToMany(models.Genre, {
+            through: 'Komik_genre',
+            foreignKey: 'komik_id',
+            otherKey: 'genre_id',
+            as: 'genre',
+        });
+    };
+
     return Komik;
 };
